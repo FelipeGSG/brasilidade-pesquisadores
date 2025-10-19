@@ -1,0 +1,404 @@
+
+:root {
+  --verde-brasil: #006400;      /* Verde bandeira */
+  --amarelo-brasil: #ffcc00;    /* Amarelo vibrante */
+  --verde-claro: #00994d;
+  --cinza-claro: #f4f4f4;
+  --cinza-escuro: #333333;
+  --branco: #ffffff;
+
+  /* Cores do modo escuro (customizadas depois via @media) */
+  --bg-dark: #0f0f0f;
+  --texto-dark: #f8f8f8;
+  --verde-dark: #00b060;
+  --amarelo-dark: #ffd633;
+  --cinza-dark: #1c1c1c;
+  --borda-dark: #2f2f2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", "Helvetica", sans-serif;
+  line-height: 1.6;
+  color: var(--cinza-escuro);
+  background-color: var(--cinza-claro);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================
+   CABEÇALHO
+   ============================ */
+header {
+  background-color: var(--verde-brasil);
+  color: var(--branco);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-bottom: 4px solid var(--amarelo-brasil);
+  transition: background-color 0.3s ease;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--branco);
+  background-color: var(--verde-claro);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--amarelo-brasil);
+  color: var(--verde-brasil);
+  outline: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+aside {
+  background-color: var(--branco);
+  border: 2px solid var(--verde-claro);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li + li {
+  margin-top: 0.5rem;
+}
+
+aside a {
+  color: var(--verde-brasil);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+aside a:hover,
+aside a:focus {
+  color: var(--amarelo-brasil);
+  outline: 2px solid var(--amarelo-brasil);
+}
+
+section {
+  background-color: var(--branco);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+section h1{
+  text-align: center;
+}
+
+.pesquisadores {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pesquisadores img {
+  width: 180px;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 3px solid var(--verde-brasil);
+}
+
+.pesquisadores h2 {
+  color: var(--verde-brasil);
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.pesquisadores p {
+  font-size: 1.25rem;
+  color: var(--cinza-escuro);
+}
+
+article > div:has(img){
+  text-align: center;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--verde-claro);
+  margin: 1.5rem 0;
+}
+
+footer {
+  background-color: var(--verde-brasil);
+  color: var(--branco);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+footer a {
+  color: var(--amarelo-brasil);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+
+/* Foco visível */
+a:focus, button:focus {
+  outline: 3px solid var(--amarelo-brasil);
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--texto-dark);
+  }
+
+  header {
+    background-color: var(--verde-dark);
+    border-bottom: 4px solid var(--amarelo-dark);
+  }
+
+  nav a {
+    background-color: var(--verde-dark);
+    color: var(--texto-dark);
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: var(--amarelo-dark);
+    color: #002b00;
+  }
+
+  main {
+    color: var(--texto-dark);
+  }
+
+  .pesquisadores p {
+    color: var(--texto-dark);
+  }
+} 
+
+#tema-toggle,
+#btn-menu {
+  background-color: var(--amarelo-brasil);
+  color: var(--verde-brasil);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 0.8rem;
+}
+
+#btn-menu{
+  position: sticky; /* torna o botão “colante” */
+  top: 0;           /* ponto de fixação */
+  z-index: 999;     /* garante que fique por cima */
+}
+
+#tema-toggle:hover,
+#btn-menu:hover,
+#tema-toggle:focus,
+#btn-menu:focus {
+  background-color: var(--verde-brasil);
+  color: var(--branco);
+  outline: 3px solid var(--amarelo-brasil);
+  outline-offset: 3px;
+}
+
+/* Tema escuro: botão se adapta */
+[data-tema="dark"] #tema-toggle, 
+[data-tema="dark"] #btn-menu{
+  background-color: var(--amarelo-dark);
+  color: #002b00;
+}
+
+[data-tema="dark"] #tema-toggle:hover,
+[data-tema="dark"] #btn-menu:hover,
+[data-tema="dark"] #tema-toggle:focus,
+[data-tema="dark"] #btn-menu:focus {
+  background-color: var(--verde-dark);
+  color: var(--texto-dark);
+  outline: 3px solid var(--amarelo-dark);
+}
+
+
+/* ----------------------------
+   Variáveis padrão (modo claro)
+   ---------------------------- */
+:root{
+  --bg: #f4f4f4;
+  --text: #333333;
+  --verde: #006400;
+  --verde-claro: #00994d;
+  --amarelo: #ffcc00;
+  --white: #ffffff;
+
+  /* cores modo escuro "sistema" (serão aplicadas abaixo via media query) */
+  --bg-dark-system: #0f0f0f;
+  --text-dark-system: #f8f8f8;
+  --verde-dark-system: #00b060;
+  --amarelo-dark-system: #ffd633;
+  --panel-dark-system: #181818;
+}
+
+/* Usar as variáveis nos seletores principais (exemplo resumido — adapte ao seu CSS) */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* header, nav, aside, section, footer, botões etc. */
+header { background-color: var(--verde); color: var(--white); }
+nav a { background-color: var(--verde-claro); color: var(--white); }
+aside { background-color: var(--white); border-color: var(--verde-claro); }
+section { background-color: var(--white); }
+footer { background-color: var(--verde); color: var(--white); }
+#toggle-tema { background-color: var(--amarelo-dark); color: var(--verde); }
+
+/* ---------- Sistema (prefers-color-scheme) ----------
+   Estas variáveis são aplicadas automaticamente quando o
+   usuário do sistema usa tema escuro.
+   (Coloque isto antes das regras que forçarão a preferência do usuário.)
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--bg-dark-system);
+    --text-dark: var(--text-dark-system);
+    --verde: var(--verde-dark-system);
+    --amarelo: var(--amarelo-dark-system);
+    --panel: var(--panel-dark-system);
+  }
+
+  /* exemplo de ajustes específicos de sistema */
+  section, aside { background-color: var(--panel); }
+  .pesquisadores h2 { color: var(--amarelo-dark); }
+  .pesquisadores img { border-color: var(--amarelo-dark); }
+  hr { background-color: var(--verde); }
+}
+
+
+html[data-theme="dark"], body.dark-mode {
+  --bg: #0f0f0f;
+  --texto-dark: #f8f8f8;
+  --verde: #00b060;
+  --verde-claro: #008f4a;
+  --amarelo-dark: #ffd633;
+  --panel: #141414;
+}
+
+html[data-theme="light"], body:not(.dark-mode) {
+  /* opcional: reafirmar cores do modo claro */
+  --bg: #f4f4f4;
+  --texto-dark: #333333;
+  --verde: #006400;
+  --verde-claro: #00994d;
+  --amarelo-dark: #ffcc00;
+  --panel: #ffffff;
+}
+
+/* Ajustes focais/estados usando variáveis (exemplo) */
+a:focus, button:focus {
+  outline: 3px solid var(--amarelo-dark);
+  outline-offset: 3px;
+}
+
+/* Garanta que o botão também utilize variáveis para cores */
+#toggle-tema {
+  background-color: var(--amarelo-dark);
+  color: var(--verde);
+}
+
+body.dark-mode #toggle-tema,
+html[data-theme="dark"] #toggle-tema {
+  background-color: var(--amarelo-dark);
+  color: #002b00;
+}
+
+@media (max-width: 768px) {
+  /* Botão aparece no mobile */
+  #btn-menu {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  aside {
+    position: fixed;
+    top: 0;
+    left: -260px; /* escondido por padrão */
+    height: 100%;
+    width: 250px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0;
+    border: 0;
+    border-right: 2px solid var(--verde-claro);
+  }
+
+  aside.ativo {
+    left: 0; /* aparece quando ativo */
+  }
+
+  main {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  main section{
+    border-radius: 0;
+    width: 100%;
+    padding: 12px 16px;
+  }
+  .pesquisadores{
+    gap: 0.5rem;
+  }
+  .pesquisadores h2{
+    font-size: 1.4rem;
+  }
+  .pesquisadores p{
+    font-size: 1rem;
+  }
+  .pesquisadores img{
+    width: 140px;
+  }
+}

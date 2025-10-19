@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisadores brasileiros</title>
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header role="banner">
+    <h1 id="titulo-principal">Pesquisadores brasileiros</h1>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#vitalBrazil">Vital Brazil</a></li>
+        <li><a href="#grazielaMaciel">Graziela Maciel Barroso</a></li>
+        <li><a href="#cesarLattes">César Lattes</a></li>
+        <li><a href="#esterSabino">Ester Sabino</a></li>
+        <li><a href="#oswaldoCruz">Oswaldo Cruz</a></li>
+        <li><a href="#carlosChagas">Carlos Chagas</a></li>
+      </ul>
+    </nav>
+
+    <button 
+      id="tema-toggle" 
+      aria-label="Alternar entre modo claro e escuro" 
+      aria-pressed="false">
+      Modo escuro
+    </button>
+    <button 
+      id="btn-menu" 
+      aria-controls="menu-pesquisadores" 
+      aria-expanded="false">
+      ☰ Menu de Pesquisadores
+    </button>
+
+  </header>
+
+  <hr aria-hidden="true">
+
+  <main id="conteudo-principal">
+    <aside id="menu-pesquisadores" aria-label="Lista de pesquisadores" role="navigation">
+      <ul>
+        <li><a href="#vitalBrazil">Vital Brazil</a></li>
+        <li><a href="#grazielaMaciel">Graziela Maciel Barroso</a></li>
+        <li><a href="#cesarLattes">César Lattes</a></li>
+        <li><a href="#esterSabino">Ester Sabino</a></li>
+        <li><a href="#oswaldoCruz">Oswaldo Cruz</a></li>
+        <li><a href="#carlosChagas">Carlos Chagas</a></li>
+      </ul>
+    </aside>
+
+    <section aria-labelledby="titulo-principal">
+      <h1>Pesquisadores brasileiros</h1>
+      <!-- Pesquisador -->
+      <article class="pesquisadores" id="vitalBrazil" aria-labelledby="nome-vital">
+        <div>
+          <img src="img/vital-brazil.webp" alt="Retrato do pesquisador">
+          <p><i>(1865–1950)</i></p>
+        </div>
+        <div>
+          <h2 id="nome-vital">Vital Brazil</h2>
+          <p>Vital Brazil foi um médico e pesquisador brasileiro, pioneiro no desenvolvimento de soros antiofídicos e fundador do Instituto Butantan.</p>
+        </div>
+      </article>
+
+      <hr aria-hidden="true">
+
+      <!-- Pesquisadora -->
+      <article class="pesquisadores" id="grazielaMaciel" aria-labelledby="nome-graziela">
+        <div>
+          <h2 id="nome-graziela">Graziela Maciel Barroso</h2>
+          <p>Foi uma importante botânica brasileira, autora de diversas obras sobre a flora nacional e referência no estudo das angiospermas.</p>
+        </div>
+        <div>
+          <img src="img/graziela-barroso.jpg" alt="Retrato da pesquisadora">
+          <p><i>(1912–2003)</i></p>
+        </div>
+      </article>
+
+      <hr aria-hidden="true">
+
+      <!-- Pesquisador -->
+      <article class="pesquisadores" id="cesarLattes" aria-labelledby="nome-cesar">
+        <div>
+          <img src="img/cesar-lattes.jpg" alt="Retrato do pesquisador">
+          <p><i>(1924–2005)</i></p>
+        </div>
+        <div>
+          <h2 id="nome-cesar">César Lattes</h2>
+          <p>Físico brasileiro co-descobridor do méson pi, contribuindo significativamente para a física de partículas e para a criação do CNPq.</p>
+        </div>
+      </article>
+
+      <hr aria-hidden="true">
+
+      <!-- Pesquisadora -->
+      <article class="pesquisadores" id="esterSabino" aria-labelledby="nome-ester">
+        <div>
+          <h2 id="nome-ester">Ester Sabino</h2>
+          <p>Médica e pesquisadora brasileira conhecida por sua atuação no sequenciamento do genoma do SARS-CoV-2 no Brasil.</p>
+        </div>
+        <div>
+          <img src="img/ester-sabino.jpeg" alt="Retrato da pesquisadora">
+          <p><i>(1960–)</i></p>
+        </div>
+      </article>
+
+      <hr aria-hidden="true">
+
+      <!-- Pesquisador -->
+      <article class="pesquisadores" id="oswaldoCruz" aria-labelledby="nome-oswaldo">
+        <div>
+          <img src="img/oswaldo-cruz.webp" alt="Retrato do pesquisador">
+          <p><i>(1872-1917)</i></p>
+        </div>
+        <div>
+          <h2 id="nome-oswaldo">Oswaldo Cruz</h2>
+          <p>Liderou a erradicação da febre amarela, peste bubônica e varíola no Rio de Janeiro e em outras regiões.</p>
+        </div>
+      </article>
+
+      <hr aria-hidden="true">
+      
+      <!-- Pesquisadora -->
+      <article class="pesquisadores" id="carlosChagas" aria-labelledby="nome-carlos">
+        <div>
+          <h2 id="nome-carlos">Carlos Chagas</h2>
+          <p>Médico sanitarista brasileiro conhecido por ser o único cientista na história da medicina a descrever completamente uma nova doença, a Doença de Chagas, desde o agente causador, o parasita Trypanosoma cruzi, até seu ciclo de vida, o inseto vetor (o barbeiro) e a patologia causada em humanos. Além dessa descoberta inédita, ele também foi pioneiro em medidas de saúde pública, como o controle de vetores de doenças e a criação do primeiro Código Sanitário brasileiro.</p>
+        </div>
+        <div>
+          <img src="img/carlos-chagas.jpg" alt="Retrato do pesquisador">
+          <p><i>(1879-1934)</i></p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Desenvolvido por 
+      <a target="_blank" href="https://github.com/FelipeGSG" aria-label="Perfil do desenvolvedor no GitHub">Felipe Gabriel</a>
+    </p>
+  </footer>
+  
+ 
+  <script src="script.js"></script>
+
+</body>
+</html>
