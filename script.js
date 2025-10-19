@@ -76,7 +76,9 @@ document.addEventListener("click", (e) =>{
   const menu = document.getElementById("menu-pesquisadores");
   const menuPesquisadores = document.getElementById("menu-pesquisadores")
   
-  if(e.target !== menuPesquisadores && e.target !== btnMenu){
+  if(e.target !== menuPesquisadores && e.target !== btnMenu &&
+    menu.classList.contains("ativo")
+  ){
     const aberto = btnMenu.getAttribute("aria-expanded") === "true";
     btnMenu.setAttribute("aria-expanded", String(!aberto));
     menu.classList.toggle("ativo");

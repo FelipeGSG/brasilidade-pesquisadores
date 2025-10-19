@@ -120,11 +120,11 @@ section h1{
 }
 
 .pesquisadores {
-    display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+    padding: 24px 0px;
 }
 
 .pesquisadores img {
@@ -132,7 +132,11 @@ section h1{
   height: auto;
   border-radius: 0.5rem;
   border: 3px solid var(--verde-brasil);
+  margin: 8px 16px;
 }
+
+.pesquisadores:nth-of-type(odd) img { float: left;}
+.pesquisadores:nth-of-type(even) img { float: right;}
 
 .pesquisadores h2 {
   color: var(--verde-brasil);
@@ -228,9 +232,7 @@ a:focus, button:focus {
 }
 
 #btn-menu{
-  position: sticky; /* torna o botão “colante” */
-  top: 0;           /* ponto de fixação */
-  z-index: 999;     /* garante que fique por cima */
+  display: none;
 }
 
 #tema-toggle:hover,
@@ -312,6 +314,8 @@ footer { background-color: var(--verde); color: var(--white); }
   .pesquisadores h2 { color: var(--amarelo-dark); }
   .pesquisadores img { border-color: var(--amarelo-dark); }
   hr { background-color: var(--verde); }
+  body.dark-mode aside a {color: var(--amarelo-brasil);}
+
 }
 
 
@@ -330,7 +334,7 @@ html[data-theme="light"], body:not(.dark-mode) {
   --texto-dark: #333333;
   --verde: #006400;
   --verde-claro: #00994d;
-  --amarelo-dark: #ffcc00;
+  --amarelo-dark: #ffbb00;
   --panel: #ffffff;
 }
 
@@ -400,5 +404,6 @@ html[data-theme="dark"] #toggle-tema {
   }
   .pesquisadores img{
     width: 140px;
+    margin: 8px;
   }
 }
