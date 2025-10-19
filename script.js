@@ -84,3 +84,40 @@ document.addEventListener("click", (e) =>{
     menu.classList.toggle("ativo");
   }
 })
+
+
+// Move o foco ao conteúdo destino ao clicar em links do aside
+document.querySelectorAll('#menu-pesquisadores a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    // permitir que o navegador faça o jump/rolagem nativa
+    const href = link.getAttribute('href');
+    const destino = document.querySelector(href);
+    if (!destino) return;
+
+    // encontrar o título (h3) e o parágrafo (p)
+    const titulo = destino.querySelector('h3, h2, h1');
+    const paragrafo = destino.querySelector('p');
+
+    // garantir ids para aria-describedby (se ainda não existem)
+    if (titulo && paragrafo) {
+      if (!paragrafo.id) paragrafo.id = `${destino.id}-texto`;
+      if (!titulo.hasAttribute('aria-describedby')) {
+        titulo.setAttribute('aria-describedby', paragrafo.id);
+      }
+      // timeout curto para esperar o scroll do navegador
+      setTimeout(() => {
+        titulo.setAttribute('tabindex', '-1'); // garante focável
+        titulo.focus({ preventScroll: true });  // foca sem reposicionar novamente
+      }, 50);
+    } else if (titulo) {
+      // se não houver parágrafo, apenas foca o título
+      setTimeout(() => {
+        titulo.setAttribute('tabindex', '-1');
+        titulo.focus({ preventScroll: true });
+      }, 50);
+    } else {
+      // fallback: foca o article
+      setTimeout(() => destino.focus({ preventScroll: true }), 50);
+    }
+  });
+});
